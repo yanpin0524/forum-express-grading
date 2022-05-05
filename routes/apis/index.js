@@ -9,6 +9,7 @@ const { authenticated, authenticatedAdmin } = require('../../middleware/api-auth
 
 router.use('/admin', authenticated, authenticatedAdmin, admin)
 
+router.get('/restaurants/:id', authenticated, restController.getRestaurant)
 router.get('/restaurants', authenticated, restController.getRestaurants)
 
 router.post('/signup', userController.signUp)
